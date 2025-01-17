@@ -11,6 +11,7 @@ service ExchangeRateService {
 message CurrencyRequest {
     string fromCurrency = 1;
     string toCurrency = 2;
+    bool refresh = 3;
 }
 
 message CurrencyResponse {
