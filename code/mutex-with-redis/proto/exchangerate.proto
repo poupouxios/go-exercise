@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package exchangerate;
+
+option go_package = "github.com/poupouxios/go-exercise/code/mutex-with-redis/exchangeratepb;exchangeratepb";
+
+service ExchangeRateService {
+    rpc fetchRate (CurrencyRequest) returns (CurrencyResponse);
+}
+
+message CurrencyRequest {
+    string fromCurrency = 1;
+    string toCurrency = 2;
+}
+
+message CurrencyResponse {
+    double rate = 1;
+}
